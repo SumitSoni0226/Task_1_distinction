@@ -5,7 +5,7 @@ const { task1 } = require('../controllers/task1');
 
 task1Route.get('/task-1', (req, res) => {
   const response = task1(req);
-  return res.status(response.code).send(response.data);
+  return res.status(response.code).send(response.data ?? response.errorMessage);
 });
 
 module.exports =task1Route;
